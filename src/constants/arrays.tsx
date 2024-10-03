@@ -9,7 +9,6 @@ export const words = [
   {
     text: "Movie",
   },
-  ,
   {
     text: "Stream",
   },
@@ -24,8 +23,9 @@ export const words = [
   },
   {
     text: "movies",
-  },
+  }
 ];
+
 
 
 export const opportunities=[
