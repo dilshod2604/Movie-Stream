@@ -26,7 +26,7 @@ const Movies = () => {
     <section className="pt-[80px]">
       <div className="container">
         <div className="flex flex-col">
-          <div className="flex items-center justify-between py-4">
+          <div className="flex items-center justify-between py-4 max-md:flex-col max-md:items-start">
             <h1 className="text-white font-semibold text-3xl">
               Explore movies
             </h1>
