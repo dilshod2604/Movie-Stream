@@ -1,4 +1,5 @@
 import {api as index} from ".."
+import { ADDRATING, USERRATING } from "./types"
 
 const api=index.injectEndpoints({
     endpoints:(build)=>({

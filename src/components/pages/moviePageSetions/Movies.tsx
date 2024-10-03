@@ -4,7 +4,7 @@ import { useDiscoverMoviesQuery } from "@/redux/api/discover";
 import { useGetGenresQuery } from "@/redux/api/genres";
 import { Select, SelectProps } from "antd";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 const Movies = () => {
   const router = useRouter();
   const [genersValue, setGenersValue] = useState<string>("");
@@ -25,8 +25,8 @@ const Movies = () => {
   return (
     <section className="pt-[80px]">
       <div className="container">
-        <div className="flex flex-col">
-          <div className="flex items-center justify-between py-4 max-md:flex-col max-md:items-start">
+        <div className="flex flex-col ">
+          <div className=" w-full  flex items-center justify-between py-4 max-md:flex-col max-md:items-start">
             <h1 className="text-white font-semibold text-3xl">
               Explore movies
             </h1>
@@ -35,7 +35,7 @@ const Movies = () => {
                 mode="multiple"
                 placeholder="Select genres"
                 options={options}
-                style={{ width: 300 }}
+                style={{ width: "300px" }}
                 onChange={handleChange}
               />
             </div>

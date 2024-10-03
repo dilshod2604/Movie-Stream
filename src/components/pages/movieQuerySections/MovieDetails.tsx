@@ -25,7 +25,7 @@ const MovieDetails = () => {
           <div className="flex items-center justify-center w-[300px] h-[500px] rounded-md overflow-hidden">
             <img
               src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
-              alt="cover"
+              alt="cover" 
               className="w-full h-full"
             />
           </div>

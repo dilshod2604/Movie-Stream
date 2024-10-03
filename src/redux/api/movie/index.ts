@@ -5,7 +5,7 @@ import { CASTS, MOVIE, RECCOMENDATIONS, SIMILAR, VIDEOS } from "./types";
 const api = index.injectEndpoints({
   endpoints: (build) => ({
     getMovieById: build.query<MOVIE.GetMovieRrsponse, MOVIE.GetMovieRequest>({
-      query: (movie_id) => ({
+      query: (movie_id) => ({   
         url: `/movie/${movie_id}`,
         method: "GET",
       }),

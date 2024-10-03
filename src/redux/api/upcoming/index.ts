@@ -1,4 +1,5 @@
 import { api as index } from "..";
+import { UPCOMING } from "./types";
 const api = index.injectEndpoints({
   endpoints: (build) => ({
     getUpcomingMovies: build.query<
