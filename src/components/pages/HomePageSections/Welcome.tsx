@@ -3,7 +3,6 @@ import SearchTrack from "@/components/ui/SearchTrack";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { words } from "@/constants/arrays";
 import { useGetUpcomingMoviesQuery } from "@/redux/api/upcoming";
-import { Skeleton } from "antd";
 import SkeletonImage from "antd/es/skeleton/Image";
 import React, { useEffect, useState } from "react";
 
@@ -14,7 +13,7 @@ const Welcome = () => {
   const { data, isLoading } = useGetUpcomingMoviesQuery();
 
   const bgRandomImage = () => {
-    const rendomIndex = Math.floor(Math.random() * data?.results.length);
+    const rendomIndex = Math.floor(Math.random() * data?.results.length!);
     const backdropImage = data?.results[rendomIndex].backdrop_path;
     if (backdropImage)
       setRandomUrl(`https://image.tmdb.org/t/p/original${backdropImage}`);
