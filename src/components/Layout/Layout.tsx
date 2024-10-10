@@ -12,8 +12,8 @@ const LayoutSite: React.FC<LayoutProps> = ({ children }) => {
   useEffect(() => {
     setTimeout(() => {
       setPreloader(false);
-    }, 1000);
-  }, []);
+    }, 3000);
+  }, []); 
   if (preloader) {
     return <Preloader />;
   }

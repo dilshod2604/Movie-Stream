@@ -1,4 +1,3 @@
-"use client";
 import { FC, ReactNode } from "react";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import { api } from "../redux/api/index";

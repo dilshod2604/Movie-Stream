@@ -9,7 +9,7 @@ import React from "react";
 
 const MovieDetails = () => {
   const { movieId } = useParams();
-  const {isOpen}=useRatingStore()
+  const { isOpen } = useRatingStore();
   const { data } = useGetMovieByIdQuery(Number(movieId));
 
   const toHoursAndMinutes = (TotalMinutes: number) => {
@@ -18,14 +18,20 @@ const MovieDetails = () => {
     return `${hours}h ${minutes < 10 ? `0${minutes}` : minutes}m`;
   };
   return (
-    <section className="flex flex-col  py-[80px]  " style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${data?.backdrop_path})`,backgroundRepeat:"no-repeat", backgroundSize:"cover" }}
->
-      <div className="container"> 
-        <div className="flex gap-x-8 pt-[50px] bg-black/75 p-5">
-          <div className="flex items-center justify-center w-[300px] h-[500px] rounded-md overflow-hidden">
+    <section
+      className="flex flex-col  py-[80px]  "
+      style={{
+        backgroundImage: `url(https://image.tmdb.org/t/p/original${data?.backdrop_path})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
+      <div className="container">
+        <div className="flex gap-x-8 pt-[50px] bg-black/75 p-5  max-md:flex-col">
+          <div className="flex items-center justify-center w-[300px] h-[500px] rounded-md overflow-hidden max-sm:w-[250px] max-md:h-[400px]">
             <img
               src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
-              alt="cover" 
+              alt="cover"
               className="w-full h-full"
             />
           </div>
@@ -41,7 +47,7 @@ const MovieDetails = () => {
               {data?.genres.map((ganre, index) => (
                 <span
                   key={index}
-                  className="text-white px-4 py-1 rounded-md bg-red-500 hover:bg-red-800 cursor-pointer"
+                  className="text-white px-4 py-1 rounded-md bg-red-500 hover:bg-red-800 cursor-pointer max-md:px-2"
                 >
                   {ganre.name}
                 </span>
@@ -50,9 +56,7 @@ const MovieDetails = () => {
             <div className="flex flex-col gap-y-7 py-3">
               <Rating data={data} />
               <PlayerButton title="Watch Trailer" />
-              {
-              isOpen&&<RatingModal/>
-              }
+              {isOpen && <RatingModal />}
             </div>
             <div className="flex flex-col gap-y-4">
               <h1 className="text-white text-2xl ">Overview</h1>
@@ -61,7 +65,7 @@ const MovieDetails = () => {
               </p>
             </div>
             <ul className="flex flex-col ">
-              <li className="flex item-center gap-x-3  py-3 border-b border-neutral-600">
+              <li className="flex item-center gap-x-3  py-3 border-b border-neutral-600 max-md:flex-col">
                 <span className="flex gap-x-2 items-center">
                   <p className="text-white truncate font-bold">Status:</p>
                   <p className="text-neutral-400 truncate">{data?.status}</p>
@@ -95,7 +99,6 @@ const MovieDetails = () => {
               </li>
             </ul>
           </div>
-          
         </div>
       </div>
     </section>

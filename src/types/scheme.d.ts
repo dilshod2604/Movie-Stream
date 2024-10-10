@@ -130,7 +130,7 @@ interface ISearchMovie {
   total_results: number;
 }
 
-interface ICasts{
+interface ICasts {
   id: number;
   cast: Array<{
     adult: boolean;
@@ -159,7 +159,7 @@ interface ICasts{
     department: string;
     job: string;
   }>;
-};
+}
 
 interface ISimilarMovies {
   page: number;
@@ -181,7 +181,7 @@ interface ISimilarMovies {
   }>;
   total_pages: number;
   total_results: number;
-};
+}
 
 interface IRecommendations {
   page: number;
@@ -204,35 +204,9 @@ interface IRecommendations {
   }>;
   total_pages: number;
   total_results: number;
-};
-
-export type Root = {
-  dates: {
-    maximum: string
-    minimum: string
-  }
-  page: number
-  results: Array<{
-    adult: boolean
-    backdrop_path: string
-    genre_ids: Array<number>
-    id: number
-    original_language: string
-    original_title: string
-    overview: string
-    popularity: number
-    poster_path: string
-    release_date: string
-    title: string
-    video: boolean
-    vote_average: number
-    vote_count: number
-  }>
-  total_pages: number
-  total_results: number
 }
 
-interface IUpcoming {
+export type Root = {
   dates: {
     maximum: string;
     minimum: string;
@@ -258,78 +232,112 @@ interface IUpcoming {
   total_results: number;
 };
 
+interface IUpcoming {
+  dates: {
+    maximum: string;
+    minimum: string;
+  };
+  page: number;
+  results: Array<{
+    adult: boolean;
+    backdrop_path: string;
+    genre_ids: Array<number>;
+    id: number;
+    original_language: string;
+    original_title: string;
+    overview: string;
+    popularity: number;
+    poster_path: string;
+    release_date: string;
+    title: string;
+    video: boolean;
+    vote_average: number;
+    vote_count: number;
+  }>;
+  total_pages: number;
+  total_results: number;
+}
+
 interface IAddRating {
-  success: boolean; 
+  success: boolean;
   message?: string;
 }
 interface IAddRatingRequest {
-  movie_id: number;  
-  rating: number;    
+  movie_id: number;
+  rating: number;
 }
-interface MovieAccountState  {
+interface MovieAccountState {
   id: number;
   favorite: boolean;
   rated: {
     value: number;
   };
   watchlist: boolean;
-};
+}
 
 interface IRequestToken {
-  success: boolean
-  expires_at: string
-  request_token: string
+  success: boolean;
+  expires_at: string;
+  request_token: string;
 }
 
-interface IDiscover{
-    page: number
-    results: Result[]
-    total_pages: number
-    total_results: number
-  }
-  
-  export interface Result {
-    adult: boolean
-    backdrop_path: string
-    genre_ids: number[]
-    id: number
-    original_language: string
-    original_title: string
-    overview: string
-    popularity: number
-    poster_path: string
-    release_date: string
-    title: string
-    video: boolean
-    vote_average: number
-    vote_count: number
-}
-
- export interface IGenres {
-  genres: Genre[]
-}
-
- export type Genre={
-  id: number
-  name: string
-}
-
-export interface IVideos {
-  id: number
-  results: Result[]
+interface IDiscover {
+  page: number;
+  results: Result[];
+  total_pages: number;
+  total_results: number;
 }
 
 export interface Result {
-  iso_639_1: string
-  iso_3166_1: string
-  name: string
-  key: string
-  site: string
-  size: number
-  type: string
-  official: boolean
-  published_at: string
-  id: string
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
 }
 
+export interface IGenres {
+  genres: Genre[];
+}
 
+export type Genre = {
+  id: number;
+  name: string;
+};
+
+export interface IVideos {
+  id: number;
+  results: Result[];
+}
+
+export interface Result {
+  iso_639_1: string;
+  iso_3166_1: string;
+  name: string;
+  key: string;
+  site: string;
+  size: number;
+  type: string;
+  official: boolean;
+  published_at: string;
+  id: string;
+}2
+
+// model User {
+//   id        Int      @id @default(autoincrement())
+//   firstName String
+//   lastName  String
+//   email     String   @unique
+//   password  String
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @default(now())
+// }

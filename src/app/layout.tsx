@@ -8,7 +8,7 @@ import LayoutClient from "./layout.client";
 const interSanse = localFont({
   src: "/fonts/Inter-VariableFont_opsz,wght.ttf",
   variable: "--font-inter-sanse",
-  weight: "400 700", // Укажите конкретные веса, если диапазон не поддерживается
+  weight: "400 700",
 });
 
 export const metadata: Metadata = {

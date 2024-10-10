@@ -6,11 +6,11 @@ import CircleButton from "../shared/CircleButton";
 interface PlayerButtonProps {
   className?: string;
   title?: string;
-} 
+}
 const PlayerButton: React.FC<PlayerButtonProps> = ({ className, title }) => {
   const [switchPlayer, setSwitchPlayer] = useState(false);
   return (
-    <div className="flex items-center gap-x-5">
+    <div className="flex items-center gap-x-5 max-sm:flex-col max-sm: gap-y-5  ">
       <CircleButton />
       <div
         className="flex gap-x-4 items-center cursor-pointer group"
