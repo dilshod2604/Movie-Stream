@@ -1,5 +1,4 @@
-import { prisma } from "@/lib/prisma";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/lib/db";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
@@ -51,16 +50,11 @@ export const POST = async (req: Request) => {
       });
     }
 
-    console.log({
-      movieId: movie_id,
-      userId: user.id,
-    });
-
     const addFavorites = await prisma.favorites.create({
       data: {
         movieId: movie_id,
         userId: user.id,
-        isFavorite:true
+        isFavorite: true,
       },
     });
 
