@@ -332,12 +332,9 @@ export interface Result {
   id: string;
 }2
 
-// model User {
-//   id        Int      @id @default(autoincrement())
-//   firstName String
-//   lastName  String
-//   email     String   @unique
-//   password  String
-//   createdAt DateTime @default(now())
-//   updatedAt DateTime @default(now())
-// }
+interface IFavoriteMovie {
+  id: number;
+  isFavorite: boolean;
+  movieId: number;
+  userId: number;
+}

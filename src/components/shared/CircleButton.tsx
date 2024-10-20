@@ -1,17 +1,38 @@
-import { buttons } from "@/constants/tools";
-import { useSession } from "next-auth/react";
+"use client";
+import { FaBookmark, FaHeart } from "react-icons/fa";
+import { FaListAlt } from "react-icons/fa";
 import React from "react";
-
-const CircleButton = () => {
-  const { data: session } = useSession();
-
+import { useAddFavoritesMutation, useGetFavoritesByIdQuery } from "@/redux/api/favorites";
+interface CircleButtonProps {
+  movie_id: number;
+}
+const CircleButton: React.FC<CircleButtonProps> = ({ movie_id }) => {
+  const [addFavorite] = useAddFavoritesMutation();
+  const { data:favorite} =useGetFavoritesByIdQuery(movie_id)
+  
+  const addMovieFavorite = async () => {
+    try {
+      await addFavorite(movie_id);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="flex items-center gap-x-4">
-      {buttons.map((button, index) => (
-        <button className="flex items-center justify-center bg-indigo-900 p-4 rounded-full">
-          <button.icon className="text-white" />
-        </button>
-      ))}
+      <FaListAlt size={25} className="text-blue-600 hover:opacity-75" />
+      {
+       favorite?.isFavorite? <FaHeart
+       size={25}
+       className="text-pink-600 hover:opacity-75"
+       onClick={addMovieFavorite}
+     />:
+     <FaHeart
+     size={25}
+     className="text-blue-600 hover:opacity-75"
+     onClick={addMovieFavorite}
+   />
+      }
+      <FaBookmark size={25} className="text-blue-600 hover:opacity-75" />
     </div>
   );
 };

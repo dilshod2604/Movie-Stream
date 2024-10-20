@@ -55,7 +55,7 @@ const MovieDetails = () => {
             </div>
             <div className="flex flex-col gap-y-7 py-3">
               <Rating data={data} />
-              <PlayerButton title="Watch Trailer" />
+              <PlayerButton title="Watch Trailer" movie_id={data?.id!} />
               {isOpen && <RatingModal />}
             </div>
             <div className="flex flex-col gap-y-4">

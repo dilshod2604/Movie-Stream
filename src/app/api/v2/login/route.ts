@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { PrismaClient } from "@prisma/client";
-
 const prisma = new PrismaClient();
+
 export const POST = async () => {
   const session = await getServerSession();
 
@@ -34,10 +34,9 @@ export const POST = async () => {
         password: "",
         firstName,
         lastName,
-        photo: session.user?.image!,
       },
     });
-    
+
     return NextResponse.json(data, { status: 201 });
   } catch (e) {
     return NextResponse.json(

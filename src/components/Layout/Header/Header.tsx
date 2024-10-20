@@ -14,7 +14,6 @@ import Modal from "@/components/shared/Modal";
 import BurgerMenu from "@/components/ui/BurgerMenu";
 import { useBurgerStore } from "@/store/useBurgerStore";
 import axios from "axios";
-import { PiFirstAidFill } from "react-icons/pi";
 
 const Header = () => {
   const { data: session } = useSession();
@@ -30,14 +29,16 @@ const Header = () => {
   //request
   const handleLogin = async () => {
     try {
-      const data = await axios.post("/api/login");
+      const data = await axios.post("/api/v2/login");
       console.log(data);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    handleLogin();
+    if (session?.user) {
+      handleLogin();
+    }
   }, [session]);
 
   return (

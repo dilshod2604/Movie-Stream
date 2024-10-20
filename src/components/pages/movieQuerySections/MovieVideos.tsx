@@ -11,7 +11,6 @@ const MovieVideos = () => {
   const { show, movie_key, close } = useVideoStore();
   const { movieId } = useParams();
   const { data } = useGetMovieVideosQuery(Number(movieId));
-  console.log("🚀 ~ MovieVideos ~ data:", data);
   return (
     <section>
       <div className="container relative">
