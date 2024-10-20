@@ -5,4 +5,6 @@ namespace FAVORITES {
   type getFavoriteRequest = number;
   type GetFavoritesByIdResponse = IFavoriteMovie;
   type GetFavoritesByIdRequest = number;
+  type DeleteFavoritesResponse = void;
+  type DeleteFavoritesRequest = number;
 }

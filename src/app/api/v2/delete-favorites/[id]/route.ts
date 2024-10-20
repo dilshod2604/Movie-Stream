@@ -7,7 +7,7 @@ interface IGetFavorite {
   };
 }
 
-export const POST = async (req: Request, { params }: IGetFavorite) => {
+export const DELETE = async (req: Request, { params }: IGetFavorite) => {
   const { id } = params;
   const favoriteId = Number(id);
   if (isNaN(favoriteId)) {

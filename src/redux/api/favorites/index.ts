@@ -24,6 +24,21 @@ const api = index.injectEndpoints({
       }),
       providesTags: ["favorites"],
     }),
+
+    deleteFavorite: build.mutation<
+      FAVORITES.DeleteFavoritesResponse,
+      FAVORITES.DeleteFavoritesRequest
+    >({
+      query: (id) => ({
+        url: `/api/v2/delete-favorites/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["favorites"],
+    }),
   }),
 });
-export const { useAddFavoritesMutation, useGetFavoritesByIdQuery } = api;
+export const {
+  useAddFavoritesMutation,
+  useGetFavoritesByIdQuery,
+  useDeleteFavoriteMutation,
+} = api;

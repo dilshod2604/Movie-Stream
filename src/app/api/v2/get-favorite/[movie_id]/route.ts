@@ -19,8 +19,11 @@ export const GET = async (req: Request, { params }: IGetFavorite) => {
       message: "Invalid movie ID",
     });
   }
+  
 
   try {
+   
+
     const data = await prisma.favorites.findFirst({
       where: {
         movieId: movieId,
