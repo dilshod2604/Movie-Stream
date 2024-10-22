@@ -32,7 +32,7 @@ const CircleButton: React.FC<CircleButtonProps> = ({ movie_id }) => {
   };
 
   return (
-    <div className="flex items-center gap-x-4">
+    <div className="flex items-start gap-x-4">
       <FaListAlt size={25} className="text-blue-600 hover:opacity-75" />
       {favorite?.isFavorite ? (
         <FaHeart
