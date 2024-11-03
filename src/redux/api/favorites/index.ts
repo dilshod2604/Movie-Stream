@@ -24,7 +24,6 @@ const api = index.injectEndpoints({
       }),
       providesTags: ["favorites"],
     }),
-
     deleteFavorite: build.mutation<
       FAVORITES.DeleteFavoritesResponse,
       FAVORITES.DeleteFavoritesRequest

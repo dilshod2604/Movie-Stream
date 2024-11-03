@@ -24,7 +24,7 @@ const Cast = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <h1 className="text-white text-lg font-bold m-0">
+                <h1 className="text-white text-lg font-bold m-0 truncate">
                   {item.original_name}
                 </h1>
                 <p className="text-neutral-400 font-sm ">{item.character}</p>
