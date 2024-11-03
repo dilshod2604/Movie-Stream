@@ -27,8 +27,8 @@ const MovieDetails = () => {
       }}
     >
       <div className="container">
-        <div className="flex gap-x-8 pt-[50px] bg-black/75 p-5  max-md:flex-col max-md:justify-center">
-          <div className="flex items-center justify-center w-[300px] h-[500px] rounded-md overflow-hidden max-sm:w-[250px] max-md:h-[400px]">
+        <div className="flex gap-x-8 pt-[50px] bg-black/75 p-5  max-md:flex-col">
+          <div className="flex items-center justify-center w-[300px] h-[500px] rounded-md overflow-hidden max-md:w-full max-md:h-auto">
             <img
               src={`https://image.tmdb.org/t/p/original${data?.poster_path}`}
               alt="cover"

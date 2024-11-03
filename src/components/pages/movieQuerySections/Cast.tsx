@@ -9,12 +9,14 @@ const Cast = () => {
   return (
     <section className="flex flex-col pt-[50px]">
       <div className="container">
-        <h1 className="flex items-center text-white text-2xl mb-5 font-bold">Top Cast</h1>
+        <h1 className="flex items-center text-white text-2xl mb-5 font-bold">
+          Top Cast
+        </h1>
         <div className="flex items-center gap-x-4 overflow-auto scroll-hidden ">
           {data?.cast.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col gap-y-4 w-[200] g-[300px] items-center"
+              className="flex flex-col gap-y-4 w-[200px] h-[300px] items-center"
             >
               <div className="flex items-center justify-center w-[150px] h-[150px] rounded-full overflow-hidden">
                 <img
@@ -27,7 +29,9 @@ const Cast = () => {
                 <h1 className="text-white text-lg font-bold m-0 truncate">
                   {item.original_name}
                 </h1>
-                <p className="text-neutral-400 font-sm ">{item.character}</p>
+                <p className="text-neutral-400 font-sm truncate ">
+                  {item.character}
+                </p>
               </div>
             </div>
           ))}
