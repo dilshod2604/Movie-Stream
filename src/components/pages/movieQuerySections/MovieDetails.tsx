@@ -43,7 +43,7 @@ const MovieDetails = () => {
               <p className="text-neutral-400 truncate">{data?.tagline}</p>
             </div>
 
-            <div className="flex gap-x-4 items-center max-md:flex-col max-md:items-start gap-y-3">
+            <div className="flex gap-x-4 items-center max-sm:flex-col max-md:items-start gap-y-3">
               {data?.genres.map((ganre, index) => (
                 <span
                   key={index}
