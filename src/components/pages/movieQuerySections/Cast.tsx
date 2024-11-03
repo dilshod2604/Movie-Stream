@@ -16,7 +16,7 @@ const Cast = () => {
           {data?.cast.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col gap-y-4 w-[200px] h-[300px] items-center"
+              className="flex flex-col gap-y-4 w-[200px] h-[300px] items-center overflow-hidden"
             >
               <div className="flex items-center justify-center w-[150px] h-[150px] rounded-full overflow-hidden">
                 <img
@@ -29,7 +29,7 @@ const Cast = () => {
                 <h1 className="text-white text-lg font-bold m-0 truncate">
                   {item.original_name}
                 </h1>
-                <p className="text-neutral-400 font-sm truncate ">
+                <p className="text-neutral-400 font-sm truncate">
                   {item.character}
                 </p>
               </div>
