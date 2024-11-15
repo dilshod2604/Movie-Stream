@@ -6,7 +6,7 @@ const SkeletonPage = () => {
   return (
     <div className="flex flex-col pt-[80px]">
       <div className="container">
-        <div className="flex  flex-wrap gap-x-4 gap-y-4">
+        <div className="flex  flex-wrap gap-x-4 gap-y-4 justify-center">
           <SkeletonImage style={{ width: "200px", height: "250px" }} active />
           <SkeletonImage style={{ width: "200px", height: "250px" }} active />
           <SkeletonImage style={{ width: "200px", height: "250px" }} active />

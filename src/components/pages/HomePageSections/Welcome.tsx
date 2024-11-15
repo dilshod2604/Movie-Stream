@@ -4,6 +4,7 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { words } from "@/constants/arrays";
 import { useGetUpcomingMoviesQuery } from "@/redux/api/upcoming";
 import SkeletonImage from "antd/es/skeleton/Image";
+import { div } from "framer-motion/client";
 import React, { useEffect, useState } from "react";
 
 const Welcome = () => {
@@ -31,12 +32,14 @@ const Welcome = () => {
         <SkeletonImage style={{ width: "300px", height: "200px" }} active />
       )}
       {randomUrl && (
-        <img
-          src={randomUrl}
-          alt="cover"
-          className="w-full h-full"
-          onLoad={() => setIsLoadingImage(false)}
-        />
+        <div className="w-full h-full overflow-hidden">
+          <img
+            src={randomUrl}
+            alt="cover"
+            className="w-full h-screen"
+            onLoad={() => setIsLoadingImage(false)}
+          />
+        </div>
       )}
 
       <div className=" flex flex-col justify-center absolute left-0 bottom-0 w-full h-[500px] bg-gradient-to-b from-transparent to-[#04152D]  ">

@@ -18,7 +18,6 @@ export const TypewriterEffect: React.FC<TypewriterEffectPtops> = ({
   cursorClassName,
 }) => {
   //array
- 
 
   const wordsArray = words.map((word) => {
     return {
@@ -26,10 +25,10 @@ export const TypewriterEffect: React.FC<TypewriterEffectPtops> = ({
       text: word.text.split(""),
     };
   });
-  
- const [scope, animate] = useAnimate();
- const isInView = useInView(scope);
-  
+
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
+
   useEffect(() => {
     if (isInView) {
       animate(
@@ -76,10 +75,9 @@ export const TypewriterEffect: React.FC<TypewriterEffectPtops> = ({
   return (
     <div
       className={cn(
-        "text-base sm:text-xl md:text-3xl lg:text-5xl font-bold text-center",
+        " max-sm:text-2xl max-md:text-3xl  max-lg:text-5xl font-bold text-center",
         className
       )}
-
     >
       {renderWords()}
       <motion.span
@@ -161,10 +159,10 @@ export const TypewriterEffectSmooth = ({
           duration: 2,
           ease: "linear",
           delay: 1,
-        }}  
+        }}
       >
         <div
-          className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
+          className=" md:text-xl lg:text:3xl xl:text-5xl font-bold"
           style={{
             whiteSpace: "nowrap",
           }}

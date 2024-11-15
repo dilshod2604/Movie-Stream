@@ -35,16 +35,16 @@ const Movies = () => {
                 mode="multiple"
                 placeholder="Select genres"
                 options={options}
-                style={{ width: "300px" }}
+                style={{ width: "250px"}}
                 onChange={handleChange}
               />
             </div>
           </div>
-          <div className=" w-full flex flex-wrap gap-x-4  gap-y-4">
+          <div className=" w-full flex flex-wrap gap-x-4  gap-y-4 justify-center">
             {discoverData?.results.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-y-2 rounded-md w-[200px] h-auto snap-center cursor-pointer"
+                className="flex  flex-col gap-y-2 rounded-md w-[250px] h-auto snap-center cursor-pointer"
                 onClick={() => router.push(`/movie/${item.id}`)}
               >
                 <div className="flex flex-col items-center justify-center overflow-hidden w-[200px] h-[250px] rounded-md">

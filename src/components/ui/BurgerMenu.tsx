@@ -6,7 +6,9 @@ import Button from "../shared/Button";
 import { links } from "@/constants/links";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useBurgerStore } from "@/store/useBurgerStore";
 const BurgerMenu = () => {
+  const { setIsOpen } = useBurgerStore();
   const { data: session } = useSession();
   const pathname = usePathname();
   const active = (href: string) => {
@@ -25,7 +27,7 @@ const BurgerMenu = () => {
       </div>
       <ul className="flex flex-col  items-center mt-5 border-t border-neutral-400 p-3 ">
         {links.map((link, index) => (
-          <li key={index}>
+          <li key={index} onClick={setIsOpen}>
             <Link href={link.href} className={active(link.href)}>
               {link.name}
             </Link>

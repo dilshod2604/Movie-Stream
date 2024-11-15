@@ -42,7 +42,7 @@ const Header = () => {
   }, [session]);
 
   return (
-    <header className="w-full fixed top-0 left-0 py-4 z-10 bg-neutral-900/30">
+    <header className="w-full fixed top-0 left-0 py-4 z-10 bg-neutral-900/30 ">
       <div className="container">
         <div className="flex justify-between">
           <div className="flex items-center " onClick={() => router.push("/")}>
@@ -71,9 +71,9 @@ const Header = () => {
                 className="text-white font-bold cursor-pointer hover:text-[#da2f68] transition"
                 size={20}
               />
-              <BurgerButton />
+              <BurgerButton />  
             </nav>
-            <div className="flex items-center">
+            <div className="flex items-center max-md:hidden ">
               {session ? (
                 <div className="max-md:hidden">
                   <ProfileButton />
@@ -89,7 +89,7 @@ const Header = () => {
             </div>
           </div>
           {isOpen && (
-            <Modal isOpen={isOpen} className="top-[80px] right-0">
+            <Modal isOpen={isOpen} className="top-[80px] right-0 bg-neutral-800/75 rounded-lg">
               <BurgerMenu />
             </Modal>
           )}
