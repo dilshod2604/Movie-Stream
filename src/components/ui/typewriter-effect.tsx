@@ -75,7 +75,7 @@ export const TypewriterEffect: React.FC<TypewriterEffectPtops> = ({
   return (
     <div
       className={cn(
-        " max-sm:text-2xl max-md:text-3xl  max-lg:text-5xl font-bold text-center",
+        "text-[50px] max-lg:text-[40px] max-sm:text-[30px] font-bold text-center ",
         className
       )}
     >
@@ -162,7 +162,7 @@ export const TypewriterEffectSmooth = ({
         }}
       >
         <div
-          className=" md:text-xl lg:text:3xl xl:text-5xl font-bold"
+          className=" md:text-xl lg:text-3xl xl:text-5xl font-bold "
           style={{
             whiteSpace: "nowrap",
           }}
